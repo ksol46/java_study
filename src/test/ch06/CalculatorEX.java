@@ -5,6 +5,15 @@ public class CalculatorEX {
 	public static void main(String[] args) {
 		Calculator myCalc = new Calculator();
 		
+		double result1 = myCalc.areaRectangle(10);
+		
+		System.out.println(result1);
+		
+		double result2 = myCalc.areaRectangle(10, 20);
+		
+		System.out.println(result2);
+		
+		/*
 		myCalc.powerOn();
 		
 		
@@ -17,7 +26,7 @@ public class CalculatorEX {
 		
 		
 		myCalc.powerOff();
-		
+		*/
 		
 	}
 

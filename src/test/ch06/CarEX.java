@@ -12,6 +12,8 @@ public class CarEx {
 		System.out.println(myCar.maxSpeed);
 		System.out.println(myCar.speed);
 		System.out.println("====================");
+	
+		
 		
 		//ㅅㄷㄴㅅ
 		Car car2 = new Car("자가용");
