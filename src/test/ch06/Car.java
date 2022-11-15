@@ -8,6 +8,7 @@ public class Car {
 	String color;
 	int maxSpeed;
 	int speed;
+	
 //	boolean start; //시동여부
 
 	
