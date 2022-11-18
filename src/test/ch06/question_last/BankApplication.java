@@ -78,14 +78,44 @@ public class BankApplication {
 	}
 	
 	//3. 예금
-	public static void deposit() {}
+	public static void deposit() {
+		//계좌번호, 예금액 입력받기(scanner 이용)
+		//계좌번호로 계좌를 찾아야 한다.
+		//Account account = findAccount(ano) 호출
+		//찾은 계좌에 예금을 해준다.
+		//account.setBalance(account.getBalance() + 예금액);
+				
+				
+	}
 	
 	//4. 출금
-	public static void withdraw() {}
+	public static void withdraw() {
+		//계좌번호, 예금액 입력받기(scanner 이용)
+		//계좌번호로 계좌를 찾아야 한다.
+		//찾은 계좌에 출금을 해준다.
+	}
 	
 	//5. accountArray 배열에서 ano가 동일한 Account객체를 찾는 역할을 한다.
-	privete static Account findAccount(String ano) {
+	private static Account findAccount(String ano) { //계좌번호는 ano에 들어있음
+		Account account = null;
 		
+		for (int i=0; i<accountArray.length; i++) {
+			if (accountArray[i] != null) {//null이 아니면 계좌가 있다.
+				//불러온 계좌안에 있는 계좌 번호와 배개변수로 받아온 계좌번호 ano가 같은지 체크
+				//<- 계좌번호를 배열 안에 넣어놔서 배열을 가져옴.
+				String dbAno = accountArray[i].getAno();
+				if (dbAno.equals(ano)) {
+					account = accountArray[i];
+					break;
+				}
+				
+				
+			}
+		}
+			
+		return account;
+			
+			
 	}
 	
 	
