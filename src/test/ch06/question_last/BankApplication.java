@@ -67,10 +67,19 @@ public class BankApplication {
 	}
 	
 	//2. 계좌 목록
-	public static void AccountList() {
-		for (int i=0; i<accountArray.length; i++) {
-			
+	private static void AccountList() {
+			System.out.println("-------");
+			System.out.println("계좌목록");
+			System.out.println("-------");
+			for (int i=0; i<accountArray.length; i++) {	
+			Account account = accountArray[i];
+			if (account != null) {
+				System.out.println("계좌번호 :" + account.getAno());
+				System.out.println("계좌주 :" + account.getOwner());
+				System.out.println("잔액:" + account.getBalance());
+			}
 		}
+			System.out.println("계좌 입력완료");
 		
 		
 		
@@ -80,19 +89,29 @@ public class BankApplication {
 	//3. 예금
 	public static void deposit() {
 		//계좌번호, 예금액 입력받기(scanner 이용)
+		System.out.println("계좌번호를 입력해주세요.");
+		String ano = scanner.next();
+		System.out.println("입금받을 금액을 입력해주세요.");
+		int balance = scanner.nextInt(); 
 		//계좌번호로 계좌를 찾아야 한다.
-		//Account account = findAccount(ano) 호출
+		Account account = findAccount(ano);
 		//찾은 계좌에 예금을 해준다.
-		//account.setBalance(account.getBalance() + 예금액);
-				
-				
+		account.setBalance(account.getBalance() + balance);
+		System.out.println("잔액은" + account.getBalance() + "원 입니다.");		
 	}
 	
 	//4. 출금
 	public static void withdraw() {
 		//계좌번호, 예금액 입력받기(scanner 이용)
+		System.out.println("계좌번호를 입력해주세요.");
+		String ano = scanner.next();
+		System.out.println("출금하실 금액을 입력해주세요.");
+		int balance = scanner.nextInt(); 
 		//계좌번호로 계좌를 찾아야 한다.
+		Account account = findAccount(ano);
 		//찾은 계좌에 출금을 해준다.
+		account.setBalance(account.getBalance() - balance);
+		System.out.println("잔액은" + account.getBalance() + "원 입니다.");
 	}
 	
 	//5. accountArray 배열에서 ano가 동일한 Account객체를 찾는 역할을 한다.
