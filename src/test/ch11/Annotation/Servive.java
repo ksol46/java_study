@@ -3,10 +3,10 @@ package test.ch11.Annotation;
 public class Servive {
 	
 	//필드
-	String test;
+//	String test;
 	
 	//생성자
-	Servive() {}
+//	Servive() {}
 	
 	//메소드
 	//메소드위에 올려주면 됨.

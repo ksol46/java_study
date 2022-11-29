@@ -1,15 +1,15 @@
 package test.ch11.Annotation;
 
-import java.lang.reflect.Method;
+import java.lang.reflect.*;
 import java.security.Provider.Service;
 
 public class PrintAnnotationEx {
 
-	public static void main(String[] args) throws IllegalAccessError {
+	public static void main(String[] args) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException {
 		Method[] declaredMethods = Service.class.getDeclaredMethods();
 		for(Method method : declaredMethods) {
 			PrintAnnotation printAno = method.getAnnotation(PrintAnnotation.class);
-														//얻어오고 싶은 클래스 정보를 넣어준다.
+			//PrintAnnotation 얻기									//얻어오고 싶은 클래스 정보를 넣어준다.
 			printLine(printAno);
 				//method를 실행시키는 함수 invoke
 			method.invoke(new Service());
