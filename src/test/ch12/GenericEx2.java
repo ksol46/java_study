@@ -10,6 +10,7 @@ public class GenericEx2 {
 		
 		Tv t = product1.getKind();
 		String tModel = product1.getModel();
+		System.out.println(tModel);
 		
 		Product<Car, String> product2 = new Product<>();
 		product2.setKind(new Car());
@@ -17,6 +18,8 @@ public class GenericEx2 {
 		
 		Car c = product2.getKind();
 		String cModel = product2.getModel();
+		System.out.println(cModel);
+		System.out.println(c);
 	}
 
 }
